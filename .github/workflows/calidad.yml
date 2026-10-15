@@ -1,0 +1,21 @@
+name: Calidad web
+on:
+  pull_request:
+    branches: [develop, main, 'feature/**']
+  push:
+    branches: [develop]
+permissions:
+  contents: read
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run check:syntax
+      - run: npm test

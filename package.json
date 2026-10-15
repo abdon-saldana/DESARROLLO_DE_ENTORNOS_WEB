@@ -1,0 +1,22 @@
+{
+  "name": "nova-soporte-ti-semana5",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portal de soporte TI: interfaz dinámica, DOM seguro y solicitudes simuladas de la semana 5.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "format": "prettier --write .",
+    "check": "prettier --check .",
+    "check:syntax": "node --check public/assets/js/ui.js && node --check public/assets/js/catalogo.js && node --check public/assets/js/interaccion.js && node --check scripts/server.mjs && node --check scripts/serve.mjs && node --check tests/interfaz.mjs",
+    "test": "node --test tests/server.test.mjs",
+    "test:ui": "node tests/interfaz.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

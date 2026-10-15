@@ -1,0 +1,155 @@
+{
+  "fecha": "2026-10-14",
+  "navegador": "155.0.8059.40",
+  "entorno": "http://127.0.0.1:55477",
+  "registros": [
+    {
+      "id": "D1",
+      "accion": "Cargar por HTTP",
+      "estado": "Aprobada",
+      "resultado": "5 tarjetas y 5 opciones de servicio; IDs únicos; sin errores JS.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "D2",
+      "accion": "Cuatro servicios y quinto solo desde JSON",
+      "estado": "Aprobada",
+      "resultado": "4→5 tarjetas y 4→5 opciones sin modificar HTML; respuesta JSON interceptada.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "D3",
+      "accion": "JSON ausente y recuperación",
+      "estado": "Aprobada",
+      "resultado": "HTTP 404 simulado: registro bloqueado y recuperación con Reintentar.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "D4",
+      "accion": "Contrato, JSON inválido e IDs duplicados",
+      "estado": "Aprobada",
+      "resultado": "7 variantes fuera del contrato y JSON con coma final rechazadas.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "D5",
+      "accion": "Texto HTML seguro",
+      "estado": "Aprobada",
+      "resultado": "Cadena literal en tarjetas, opciones y tabla; ningún nodo img.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "F1",
+      "accion": "Enviar vacío",
+      "estado": "Aprobada",
+      "resultado": "Cinco mensajes asociados, foco en nombre y ninguna solicitud.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "F2",
+      "accion": "Correo ana@ y descripción corta",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "F3",
+      "accion": "Diez espacios",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "F4",
+      "accion": "Prioridad ausente y corregir",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "F5",
+      "accion": "Envío y repeticiones durante la espera",
+      "estado": "Aprobada",
+      "resultado": "Una fila; confirmación SOL-0001; botón recuperado, contador y errores reiniciados.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "A1",
+      "accion": "Ayuda con Enter, Espacio y Escape",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "A2",
+      "accion": "Formulario completo solo con teclado",
+      "estado": "Aprobada",
+      "resultado": "Recorrido Tab, radio con Espacio y envío con Enter completado; foco visible.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "A3",
+      "accion": "Movimiento reducido",
+      "estado": "Aprobada",
+      "resultado": "Animación de 0.00001 s; confirmación visible.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "T1",
+      "accion": "Dos solicitudes correlativas y asociación",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "T2",
+      "accion": "Duplicados por submit directo",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "T3",
+      "accion": "Recargar borra lista y reinicia códigos",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "R1",
+      "accion": "320, 768, 1440 px y equivalente zoom 200 %",
+      "estado": "Aprobada",
+      "resultado": "Sin desbordamiento en 320, 768, 1440 y 720 px; 720 representa el reflow de 1440 al 200 %. Zoom real pendiente.",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "M1",
+      "accion": "Menú móvil con teclado",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "S1",
+      "accion": "ID de servicio manipulado",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "J1",
+      "accion": "No JavaScript: restricciones nativas",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    },
+    {
+      "id": "N1",
+      "accion": "Sin excepciones JavaScript no controladas",
+      "estado": "Aprobada",
+      "resultado": "Resultado esperado verificado",
+      "correccion": "Sin corrección"
+    }
+  ],
+  "errores": []
+}

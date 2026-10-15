@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Nova Servicios TI: catálogo de soporte, ayuda y simulación accesible de solicitudes. Proyecto de interfaz dinámica y DOM."
+    />
+    <meta name="theme-color" content="#133d38" />
+    <title>Nova Servicios TI · Centro de soporte</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/ui.js" defer></script>
+    <script type="module" src="assets/js/catalogo.js"></script>
+    <script type="module" src="assets/js/interaccion.js"></script>
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <a class="marca" href="#inicio" aria-label="Nova Servicios TI, inicio"
+        ><span class="marca-icono" aria-hidden="true">n.</span
+        ><span>nova<span class="marca-sub">SERVICIOS TI</span></span></a
+      >
+      <nav aria-label="Navegación principal">
+        <button
+          id="btn-menu"
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          Menú ☰
+        </button>
+        <ul id="menu-principal" class="menu">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#estados">Solicitudes</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a href="#formulario" class="boton boton-oscuro">Solicitar soporte ↗</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section id="inicio" class="hero">
+        <div class="hero-texto">
+          <p class="eyebrow">
+            <span class="punto" aria-hidden="true"></span>TU CENTRO DE SOPORTE TI
+          </p>
+          <h1>Menos obstáculos.<br />Más <em>soluciones.</em></h1>
+          <p class="hero-descripcion">
+            Un lugar para resolver tus dudas, elegir el servicio que necesitas y dar el
+            siguiente paso.
+          </p>
+          <div class="acciones">
+            <a class="boton boton-lima" href="#formulario">Crear una solicitud ↗</a
+            ><a class="enlace-claro" href="#servicios">Explorar servicios ↓</a>
+          </div>
+          <p class="hero-nota">Entorno de práctica · Usa datos ficticios</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbita orbita-uno"></div>
+          <div class="orbita orbita-dos"></div>
+          <span class="visual-etiqueta">TODO EMPIEZA CON UNA SOLICITUD</span>
+          <div class="visual-ticket">
+            <span class="ticket-icono">↗</span
+            ><span class="ticket-mini">CENTRO DE SOPORTE</span
+            ><strong>Estamos aquí<br />para ayudarte.</strong>
+            <div class="ticket-linea"></div>
+            <span class="ticket-pill">● &nbsp; Un paso a la vez</span>
+          </div>
+          <div class="visual-pie">
+            <span>ACCESOS / EQUIPOS / CONECTIVIDAD</span><span>01 — 05</span>
+          </div>
+        </div>
+      </section>
+      <div class="ruta">
+        <span><b>01</b> Elige un servicio</span><span><b>02</b> Describe el problema</span
+        ><span><b>03</b> Recibe tu código</span>
+      </div>
+      <section id="servicios" class="seccion">
+        <div class="encabezado">
+          <div>
+            <p class="eyebrow">01 / CATÁLOGO</p>
+            <h2>¿En qué podemos ayudarte?</h2>
+          </div>
+          <p>
+            Servicios en un solo lugar.<br />Elige el que mejor se ajuste a tu incidencia.
+          </p>
+        </div>
+        <p id="estado-catalogo" class="estado-catalogo" role="status" aria-live="polite">
+          Cargando servicios…
+        </p>
+        <div id="catalogo" class="services__grid"></div>
+        <button id="reintentar-catalogo" type="button" class="boton boton-oscuro" hidden>
+          Reintentar carga</button
+        ><noscript
+          ><p>
+            Activa JavaScript para cargar el catálogo y realizar la simulación de
+            solicitudes.
+          </p></noscript
+        >
+      </section>
+      <section id="formulario" class="seccion formulario-seccion">
+        <aside class="form-intro">
+          <p class="eyebrow">02 / NUEVA SOLICITUD</p>
+          <h2>Cuéntanos<br />qué ocurrió.</h2>
+          <p>
+            Selecciona un servicio y describe la incidencia. Te mostraremos un código para
+            identificar tu solicitud de práctica.
+          </p>
+          <div class="nota">
+            <strong>Una práctica, paso a paso.</strong>
+            <p>
+              Este formulario simula el registro. No envía tickets reales. Los datos se
+              eliminan al recargar la página.
+            </p>
+          </div>
+          <button
+            id="boton-ayuda"
+            type="button"
+            class="ayuda-boton"
+            aria-expanded="false"
+            aria-controls="panel-ayuda"
+          >
+            ¿Necesitas ayuda? <span aria-hidden="true">＋</span>
+          </button>
+          <div id="panel-ayuda" class="ayuda-panel" hidden>
+            <p>
+              Usa un nombre y correo ficticios. Elige el servicio, indica la prioridad de
+              tu incidencia y escribe entre 10 y 500 caracteres útiles.
+            </p>
+            <p>
+              Describe qué intentabas hacer y qué mensaje apareció. Puedes cerrar esta
+              ayuda con Escape.
+            </p>
+            <a href="#descripcion">Ir a la descripción</a>
+          </div>
+        </aside>
+        <form id="form-incidencia" class="form-card">
+          <p class="form-nota">Todos los campos son obligatorios.</p>
+          <fieldset>
+            <legend>Datos de contacto</legend>
+            <div class="campos-dos">
+              <div class="campo">
+                <label for="nombre">Nombre completo</label
+                ><input
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  required
+                  minlength="3"
+                  maxlength="100"
+                  autocomplete="name"
+                  placeholder="Ej. Ana Torres"
+                  aria-describedby="error-nombre"
+                />
+                <p id="error-nombre" class="error" role="alert"></p>
+              </div>
+              <div class="campo">
+                <label for="correo">Correo electrónico</label
+                ><input
+                  id="correo"
+                  name="correo"
+                  type="email"
+                  required
+                  maxlength="254"
+                  autocomplete="email"
+                  placeholder="ana@example.com"
+                  aria-describedby="error-correo"
+                />
+                <p id="error-correo" class="error" role="alert"></p>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Detalles de la incidencia</legend>
+            <div class="campo">
+              <label for="servicio">Servicio</label
+              ><select
+                id="servicio"
+                name="servicio"
+                required
+                disabled
+                aria-describedby="error-servicio"
+              >
+                <option value="">Cargando servicios…</option>
+              </select>
+              <p id="error-servicio" class="error" role="alert"></p>
+            </div>
+            <fieldset id="grupo-prioridad" class="grupo-radio">
+              <legend>Prioridad de tu incidencia</legend>
+              <div class="opciones-radio">
+                <label class="radio-opcion" for="prioridad-baja"
+                  ><input
+                    id="prioridad-baja"
+                    name="prioridad"
+                    value="baja"
+                    type="radio"
+                    required
+                    aria-describedby="error-prioridad"
+                  />
+                  Baja</label
+                ><label class="radio-opcion" for="prioridad-media"
+                  ><input
+                    id="prioridad-media"
+                    name="prioridad"
+                    value="media"
+                    type="radio"
+                    required
+                    aria-describedby="error-prioridad"
+                  />
+                  Media</label
+                ><label class="radio-opcion" for="prioridad-alta"
+                  ><input
+                    id="prioridad-alta"
+                    name="prioridad"
+                    value="alta"
+                    type="radio"
+                    required
+                    aria-describedby="error-prioridad"
+                  />
+                  Alta</label
+                >
+              </div>
+              <p id="error-prioridad" class="error" role="alert"></p>
+            </fieldset>
+            <div class="campo">
+              <label for="descripcion">Descripción del problema</label
+              ><textarea
+                id="descripcion"
+                name="descripcion"
+                required
+                minlength="10"
+                maxlength="500"
+                rows="4"
+                placeholder="¿Qué sucedió y cómo afecta tu trabajo?"
+                aria-describedby="ayuda-descripcion contador error-descripcion"
+              ></textarea>
+              <div class="descripcion-pie">
+                <small id="ayuda-descripcion">Entre 10 y 500 caracteres útiles.</small
+                ><small id="contador">0/500 caracteres</small>
+              </div>
+              <p id="error-descripcion" class="error" role="alert"></p>
+            </div>
+          </fieldset>
+          <button id="enviar" class="boton boton-oscuro enviar" type="submit" disabled>
+            Registrar solicitud de práctica ↗
+          </button>
+          <p
+            id="estado"
+            class="mensaje"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+        </form>
+      </section>
+      <section id="estados" class="seccion">
+        <div class="encabezado">
+          <div>
+            <p class="eyebrow">03 / SEGUIMIENTO</p>
+            <h2>Solicitudes de práctica</h2>
+          </div>
+          <span id="total-solicitudes" class="contador-ticket">0 solicitudes</span>
+        </div>
+        <p class="texto-secundario">
+          Tu historial de esta sesión. Se elimina al recargar y la numeración vuelve a
+          SOL-0001.
+        </p>
+        <div
+          class="tabla-responsive"
+          role="region"
+          aria-label="Tabla de solicitudes de práctica; desplazable horizontalmente"
+          tabindex="0"
+        >
+          <table>
+            <caption>
+              Solicitudes simuladas en esta página
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Servicio</th>
+                <th scope="col">Prioridad</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="filas-solicitudes">
+              <tr>
+                <td colspan="4" class="tabla-vacia">
+                  Aún no tienes solicitudes. Completa el formulario para comenzar.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="faq" class="seccion faq-seccion">
+        <div>
+          <p class="eyebrow">04 / RESPUESTAS RÁPIDAS</p>
+          <h2>Antes de<br />continuar.</h2>
+          <p class="texto-secundario">Algunas dudas que podemos resolver aquí.</p>
+        </div>
+        <div class="faq-lista">
+          <h3>Soporte técnico</h3>
+          <details>
+            <summary>¿Cómo elijo la prioridad?</summary>
+            <p>
+              Alta si el problema impide trabajar; media si limita algunas tareas; baja
+              para una consulta o mejora sin urgencia. Esta prioridad es independiente de
+              la clasificación del servicio.
+            </p>
+          </details>
+          <details>
+            <summary>¿Qué información debo incluir?</summary>
+            <p>
+              Indica el equipo o programa afectado, qué intentaste hacer y el mensaje de
+              error. Usa datos ficticios y nunca incluyas contraseñas.
+            </p>
+          </details>
+          <details>
+            <summary>¿Cuál es el horario de atención del caso?</summary>
+            <p>En el caso académico, Nova atiende de lunes a viernes, de 8:00 a 18:00.</p>
+          </details>
+          <h3>Solicitudes y servicios</h3>
+          <details>
+            <summary>¿Se enviará una solicitud real?</summary>
+            <p>
+              No. Este portal es una práctica académica. Registra solicitudes en la
+              memoria del navegador y muestra una confirmación simulada.
+            </p>
+          </details>
+          <details>
+            <summary>¿Puedo recuperar mi historial después de recargar?</summary>
+            <p>
+              No. Las solicitudes de esta práctica desaparecen al recargar o cerrar la
+              página. La persistencia en una base de datos corresponde a una etapa
+              posterior.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section id="contacto" class="contacto">
+        <div>
+          <p class="eyebrow">NOVA SERVICIOS TI</p>
+          <h2>La tecnología avanza.<br />Tu soporte también.</h2>
+        </div>
+        <div>
+          <p>Contacto del caso académico</p>
+          <p><strong>soporte@novaservicios.example</strong></p>
+          <p>Av. Ficticia 123 · Lima, Perú</p>
+          <small>Datos de ejemplo · Sin atención real desde este portal</small>
+        </div>
+      </section>
+    </main>
+    <footer class="pie">
+      <span>© 2026 Nova Servicios TI</span
+      ><span>Desarrollo de Entornos Web · Semana 5</span
+      ><a href="#inicio">Volver al inicio ↑</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Restablecer contraseña",
+    "descripcion": "Recupera el acceso a tu cuenta corporativa.",
+    "categoria": "Accesos",
+    "prioridad": "alta"
+  },
+  {
+    "id": 2,
+    "nombre": "Falla de impresora",
+    "descripcion": "Reporta impresoras sin conexión.",
+    "categoria": "Hardware",
+    "prioridad": "media"
+  },
+  {
+    "id": 3,
+    "nombre": "Sin acceso a internet",
+    "descripcion": "Reporta problemas de WiFi o red cableada.",
+    "categoria": "Red",
+    "prioridad": "alta"
+  },
+  {
+    "id": 4,
+    "nombre": "Instalar software",
+    "descripcion": "Solicita programas autorizados.",
+    "categoria": "Software",
+    "prioridad": "baja"
+  },
+  {
+    "id": 5,
+    "nombre": "Actualizar sistema operativo",
+    "descripcion": "Solicita la actualización de tu sistema operativo.",
+    "categoria": "Software",
+    "prioridad": "media"
+  }
+]
