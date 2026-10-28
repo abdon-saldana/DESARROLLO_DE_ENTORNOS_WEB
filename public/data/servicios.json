@@ -19,5 +19,19 @@
     "descripcion": "Reporta problemas de WiFi o red cableada.",
     "categoria": "Red",
     "prioridad": "alta"
+  },
+  {
+    "id": 4,
+    "nombre": "Instalar software",
+    "descripcion": "Solicita programas autorizados.",
+    "categoria": "Software",
+    "prioridad": "baja"
+  },
+  {
+    "id": 5,
+    "nombre": "Actualizar sistema operativo",
+    "descripcion": "Solicita la actualización de tu sistema operativo.",
+    "categoria": "Software",
+    "prioridad": "media"
   }
 ]
